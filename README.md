@@ -1,24 +1,30 @@
-# README
+# Chatealo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple Turbo Rails and Action cable Chat web app.
 
-Things you may want to cover:
+## Dependencies
+This project runs with:
 
-* Ruby version
+- Ruby 3.3.1
+- Rails 7.1.3
+- PostgreSQL
 
-* System dependencies
+## Installation
 
-* Configuration
+```bash
+git clone https://github.com/yourusername/your-repo.git
+cd your-repo
+bundle install
+rails db:create db:migrate
+rails server
+```
 
-* Database creation
+## Usage
+```bash
+rails server
+```
 
-* Database initialization
+Then navigate to http://localhost:3000 in your browser.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Contact
+Agustín Vignolo - https://www.linkedin.com/in/agustinvignolo/
