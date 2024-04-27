@@ -12,8 +12,8 @@ This project runs with:
 ## Installation
 
 ```bash
-git clone https://github.com/yourusername/your-repo.git
-cd your-repo
+git clone [https://github.com/yourusername/your-repo.git](https://github.com/Saikus08/chatealo)
+cd chatealo
 bundle install
 rails db:create db:migrate
 rails server
