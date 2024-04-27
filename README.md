@@ -1,4 +1,4 @@
-# Chatealo
+# Chatealo! 
 
 A simple Turbo Rails and Action cable Chat web app.
 
