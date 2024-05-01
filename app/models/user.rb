@@ -6,6 +6,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # Validations
   validates :first_name, presence: true
   validates :last_name, presence: true
+
+  # Callbacks
+  after_create_commit { broadcast_append_to "users" } # ActionCable broadcasts new user to 'users' channel.
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end
