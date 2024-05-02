@@ -16,7 +16,6 @@ git clone https://github.com/Saikus08/chatealo
 cd chatealo
 bundle install
 rails db:create db:migrate
-rails server
 ```
 
 ## Usage
