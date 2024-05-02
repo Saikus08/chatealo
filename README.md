@@ -1,6 +1,6 @@
 # Chatealo! 
 
-A simple Turbo Rails and Action cable Chat web app.
+A simple Chat webapp using Turbo Rails and Redis.
 
 ## Dependencies
 This project runs with:
