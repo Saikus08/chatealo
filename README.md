@@ -21,6 +21,8 @@ rails server
 
 ## Usage
 ```bash
+redis-server
+
 rails server
 ```
 
