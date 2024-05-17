@@ -1,0 +1,10 @@
+<% if current_user.present? %>
+  <nav>
+    <h1>Chatealo!</h1>
+    <ul>
+      <%= link_to "Rooms", root_path %>
+      <%= link_to "Profile", edit_user_path(current_user) %>
+      <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+    </ul>
+  </nav>
+<% end %>

@@ -9,5 +9,5 @@ class Room < ApplicationRecord
   # has_many :messages, dependent: :destroy
 
   # Callbacks
-  after_create_commit { broadcast_append_to "rooms" } # ActionCable broadcasts new user to 'users' channel.
+  after_create_commit { broadcast_append_to "rooms" } # ActionCable broadcasts new user to 'rooms' channel.
 end

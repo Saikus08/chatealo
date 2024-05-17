@@ -6,16 +6,31 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= favicon_link_tag asset_path('chatealo-logo.jpeg') %>
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "application", :"data-turbo-track" => "reload" %>
   </head>
 
-  <body>
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
-    <%= yield %>
-  </body>
+  <main>
+    <body>
+      <%= render "application/navbar" %> <!-- This is the navbar -->
+      <% if current_user.present? %>
+        <div class="container">
+          <% if notice %>
+            <p class="alert alert-success"><%= notice %></p>
+          <% end %>
+
+          <% if alert %>
+            <p class="alert alert-danger"><%= alert %></p>
+          <% end %>
+
+          <%= yield %>
+        </div>
+      <% else %>
+          <%= yield %>
+      <% end %>
+    </body>
+  </main>
 </html>

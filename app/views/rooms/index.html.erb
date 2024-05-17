@@ -10,7 +10,7 @@ note that Room model has an after_create_commit calback which broadcasts the new
 =end%>
 <main>
   <div class="container">
-    <h1> Welcome <%= @current_user.full_name %> to Chatealo! </h1>
+    <h1> Welcome back <%= @current_user.full_name %>! </h1>
 
     <h2> Users </h2>
     <%= turbo_stream_from "users" %>
