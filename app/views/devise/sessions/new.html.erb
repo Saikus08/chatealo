@@ -1,28 +1,34 @@
 <div class="sessions">
+  <div id="bub-part-a"></div>
+  <div id="bub-part-b"></div>
+  <div id="bub-part-c"></div>
   <div>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <h1>Chatealo!</h1>
-      <h2>Log in</h2 >
+      <h2>Log in</h2>
       <div>
         <%= f.label :email %>
         <%= f.email_field :email, placeholder: 'email address', autofocus: true, autocomplete: "email" %>
-
         <%= f.label :password %>
         <%= f.password_field :password, placeholder: 'password', autocomplete: "current-password" %>
-
         <% if notice %>
           <p class="alert alert-success"><%= notice %></p>
         <% end %>
-
         <% if alert %>
           <p class="alert alert-danger"><%= alert %></p>
         <% end %>
         <%= f.button "Log in" %>
       </div>
-      <p>
-        Don't have an account?
-      </p>
+      <p>Don't have an account?</p>
       <%= render "devise/shared/links" %>
     <% end %>
+  </div>
+  <div id="bub-part-c"></div>
+  <div id="bub-part-b"></div>
+  <div id="bub-part-a"></div>
+  <div id="speech-arrow">
+    <div id="arrow-w"></div>
+    <div id="arrow-x"></div>
+    <div id="arrow-y"></div>
+    <div id="arrow-z"></div>
   </div>
 </div>

@@ -1,10 +1,15 @@
-<% if current_user.present? %>
-  <nav>
-    <h1>Chatealo!</h1>
+<nav>
+  <h1>Chatealo!</h1>
+  <% if current_user.present? %>
     <ul>
       <%= link_to "Rooms", root_path %>
       <%= link_to "Profile", edit_user_path(current_user) %>
       <%= button_to "Logout", destroy_user_session_path, method: :delete %>
     </ul>
-  </nav>
-<% end %>
+  <% else %>
+    <ul>
+      <%= link_to image_tag("github-icon.png", alt: "github-icon"), "https://github.com/Saikus08/chatealo", class: "button-icon" %>
+      <%= link_to image_tag("linkedin-icon.png", alt: "linkedin-icon"), "https://www.linkedin.com/in/agustinvignolo", class: "button-icon" %>
+    </ul>
+  <% end %>
+</nav>

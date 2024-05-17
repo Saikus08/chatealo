@@ -1,34 +1,47 @@
 <div class="sessions">
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <h1>Chatealo!</h1>
+  <div id="bub-part-a"></div>
+  <div id="bub-part-b"></div>
+  <div id="bub-part-c"></div>
+  <div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <h2>Sign up</h2>
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name %>
+      <div>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, placeholder: 'first name' %>
 
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name %>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, placeholder: 'last name' %>
 
-      <%= f.label :email %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.label :email %>
+        <%= f.email_field :email, placeholder: 'email', autofocus: true, autocomplete: "email" %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, autocomplete: "new-password" %>
+        <%= f.label :password %>
+        <%= f.password_field :password, placeholder:'password', autocomplete: "new-password" %>
 
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        <%= f.label :confirmation %>
+        <%= f.password_field :password_confirmation, placeholder: 'password confirmation', autocomplete: "new-password" %>
 
-      <% if notice %>
-        <p class="alert alert-success"><%= notice %></p>
-      <% end %>
+        <% if notice %>
+          <p class="alert alert-success"><%= notice %></p>
+        <% end %>
 
-      <% if alert %>
-        <p class="alert alert-danger"><%= alert %></p>
-      <% end %>
+        <% if alert %>
+          <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
 
-      <%= f.button "Sign up" %>
-      <p>
-        Already have an account?
-      </p>
+        <%= f.button "Sign up" %>
+      </div>
+      <p> Already have an account? </p>
       <%= render "devise/shared/links" %>
-  <% end %>
+    <% end %>
+  </div>
+  <div id="bub-part-c"></div>
+  <div id="bub-part-b"></div>
+  <div id="bub-part-a"></div>
+  <div id="speech-arrow">
+    <div id="arrow-w"></div>
+    <div id="arrow-x"></div>
+    <div id="arrow-y"></div>
+    <div id="arrow-z"></div>
+  </div>
 </div>
