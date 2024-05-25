@@ -1,30 +1,5 @@
 # frozen_string_literal: true
 
-# The `TurboFailureApp` class is a custom failure app for Devise that makes it compatible with Turbo.
-# By default, Devise is not compatible with Turbo, which is a part of Hotwire that speeds up Rails applications.
-# This class inherits from `Devise::FailureApp`, which is the default failure app for Devise.
-#
-# The `respond` method is overridden to handle Turbo Stream requests. If the request format is Turbo Stream,
-# it will redirect the user. Otherwise, it will call the `respond` method from the superclass (`Devise::FailureApp`).
-#
-# The `skip_format?` method checks if the request format is one of 'html', 'turbo_stream', or '*/*'. If it is,
-# the method returns true, indicating that this format should be skipped.
-#
-# This solution is based on a fix from GoRails (https://gorails.com/episodes/devise-hotwire-turbo).
-class TurboFailureApp < Devise::FailureApp
-  def respond
-    if request_format == :turbo_stream
-      redirect
-    else
-      super
-    end
-  end
-
-  def skip_format?
-    %w(html turbo_stream */*).include? request_format.to_s
-  end
-end
-
 # Assuming you have not yet modified this file, each configuration option below
 # is set to its default value. Note that some are commented out while others
 # are not: uncommented lines are intended to protect your configuration from
@@ -39,17 +14,16 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'd550904dfe7db278ee6e8c5e8034e2152de0fe6a4c4efb32926cffa4b297bc38d01d8e5be1e943ec2e5b07243c440114daa178540330c3a0397ac0dee52ad5da'
+  # config.secret_key = '83f15942b0049e1490fa886bd26640d7ab7a7cbde1208925ecf7ccdff96122cdb9ec843f50611516f51fbc0671889e54472fc67767de9c15ff713c1bc94210fd'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
-  config.parent_controller = 'TurboDeviseController'
+  # config.parent_controller = 'DeviseController'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -151,7 +125,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'cb9cb29272c7b3ea0d86a49bf9e854959a090b0c7293b3e3e30e3b4432f988eb75e7624238c36ce9aebe5b31f0858eb3dfa37aa0f6e39a412780e47a0542b7a0'
+  # config.pepper = 'd4652619f963d6f8a671a94a7e99f2f33cb5db926ee173c6b5d363e362334b09abc6f9731af678bf0bb082e225286a6dc9cbe6cba9d00332ee8bc0b5975eae43'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -302,11 +276,10 @@ Devise.setup do |config|
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
   #
-  config.warden do |manager|
-    manager.failure_app = TurboFailureApp
+  # config.warden do |manager|
   #   manager.intercept_401 = false
-  #   manager.default_strat egies(scope: :user).unshift :some_external_strategy
-  end
+  #   manager.default_strategies(scope: :user).unshift :some_external_strategy
+  # end
 
   # ==> Mountable engine configurations
   # When using Devise inside an engine, let's call it `MyEngine`, and this engine

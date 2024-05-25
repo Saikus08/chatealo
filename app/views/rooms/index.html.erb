@@ -1,0 +1,24 @@
+<%
+=begin%>
+We set up a turbo stream to listen for updates to the rooms. This will allow us to update the rooms list in real-time.
+
+turbo_stream_from "rooms" will be listening to the rooms channel.
+We then render the rooms list setting a container with the expected ID for Turbo to append the items to.
+
+note that Room model has an after_create_commit calback which broadcasts the new room to the rooms channel.
+<%
+=end%>
+
+<h1> Welcome back <%= @current_user.full_name %>! </h1>
+
+<h2> Users </h2>
+<%= turbo_stream_from "users" %>
+<div id="users">
+  <%= render @users %>
+</div>
+
+<h2> Rooms </h2>
+<%= turbo_stream_from "rooms" %>
+<div id="rooms">
+  <%= render @rooms %>
+</div>
