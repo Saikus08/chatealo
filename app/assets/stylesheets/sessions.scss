@@ -1,0 +1,56 @@
+.sessions {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 18rem;
+
+  .sessions-form {
+    align-items: center;
+    background-color: white;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    width: 18rem;
+
+    input {
+      display: block;
+      margin-bottom: 1rem;
+      width: 12rem;
+    }
+
+    .alert {
+      margin: 16px 0 16px 0;
+      padding: 0;
+    }
+
+    .alert-danger{
+      background-color: transparent;
+      width: 13rem;
+    }
+  }
+
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  button {
+    margin-bottom: 1rem;
+    width: 12.5rem;
+  }
+
+  a {
+    font-family: 'Pixelify';
+    font-size: 1rem;
+    text-decoration: underline;
+  }
+}
