@@ -36,3 +36,10 @@
 
 # Ignore database.yml
 /config/database.yml
+
+# Byebug history
+.byebug_history
+
+# dump.rdb
+dump.rdb
+

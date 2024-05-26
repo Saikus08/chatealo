@@ -9,16 +9,20 @@ note that Room model has an after_create_commit calback which broadcasts the new
 <%
 =end%>
 
-<h1> Welcome back <%= @current_user.full_name %>! </h1>
+<h1> Welcome back <%= @current_user.first_name %>! </h1>
 
-<h2> Users </h2>
-<%= turbo_stream_from "users" %>
-<div id="users">
-  <%= render @users %>
-</div>
+<section>
+  <h2> Users </h2>
+  <%= turbo_stream_from "users" %>
+  <div id="users">
+    <%= render @users %>
+  </div>
+</section>
 
-<h2> Rooms </h2>
-<%= turbo_stream_from "rooms" %>
-<div id="rooms">
-  <%= render @rooms %>
-</div>
+<section>
+  <h2> Rooms </h2>
+  <%= turbo_stream_from "rooms" %>
+  <div id="rooms">
+    <%= render @rooms %>
+  </div>
+</section>
