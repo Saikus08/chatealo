@@ -1,0 +1,18 @@
+.alert {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: 1rem;
+  width: 80%;
+}
+
+.alert-danger {
+  background-color: rgb(231, 189, 189);
+  color: red;
+}
+
+.alert-success {
+  background-color: rgb(189, 231, 189);
+  color: green;
+}
+
