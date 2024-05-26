@@ -3,7 +3,7 @@
   <div id="bub-part-b"></div>
   <div id="bub-part-c"></div>
   <div>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'sessions-form' }) do |f| %>
       <h2>Log in</h2>
       <div>
         <%= f.label :email %>

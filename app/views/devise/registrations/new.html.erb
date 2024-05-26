@@ -3,7 +3,7 @@
   <div id="bub-part-b"></div>
   <div id="bub-part-c"></div>
   <div>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'sessions-form' }) do |f| %>
       <h2>Sign up</h2>
       <div>
         <%= f.label :first_name %>
